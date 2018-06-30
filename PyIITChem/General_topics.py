@@ -100,7 +100,7 @@ def molar_mass(compound):
 # Takes dictionary and mass taken as input and returns a float
 # dictionary contains key-order pair of element name (NOT SYMBOL) and its subscript
 
-def moles(compound,mass):
+def moles_of_compound(compound,mass):
     mol_mass=molar_mass(compound)
     return mol_mass/moles
 
@@ -108,7 +108,7 @@ def moles(compound,mass):
 
 
 # Molarity
-# moles of solute per litre of solution
+# Moles of solute per litre of solution
 # takes dictionary, mass taken and volume(in liters) of solution as input, and returns float
 # dictionary contains key-order pair of element name (NOT SYMBOL) and its subscript
 # formula : Moles(of solute)/volume(of solution)
@@ -119,7 +119,7 @@ def molarity(compound,volume,mass=0,moles=0):
         # Calculate molar mass of compound
         mol_mass=molar_mass(compound)
         # Calculates moles       
-        return moles(compound,mass)/volume
+        return moles_of_compound(compound,mass)/volume
     # Moles given
     elif moles:
         return moles/volume
@@ -140,12 +140,27 @@ def molality(compound,solv_mass,subs_moles=0.0,subs_mass=0.0):
         return subs_moles/solv_mass
     # Mass given
     elif subs_mass:
-        return moles(compound,subs_mass)/solv_mass
+        return moles_of_compound(compound,subs_mass)/solv_mass
 
 '''___________________________________________________________________________________________________________________'''
 
-def molar_to_molal(molar,density):
-    
+# Function to convert molarity into molality
+# Takes molarity, density and weight of solute and returns a float
+
+def molar_to_molal(molar,density,wt_of_solute):
+    # Returns Molality
+    return molar/(density-(molar*wt_of_solute))
+
+'''___________________________________________________________________________________________________________________'''
+
+# Converts Molality into Molarity
+# Takes molality, density and weight of solute and returns a float
+
+def molal_to_molar(molal,density,wt_of_solute):
+    # Returns Molarity
+    return molal*(density-wt_of_solute)
+
+'''___________________________________________________________________________________________________________________'''  
     
     
         
