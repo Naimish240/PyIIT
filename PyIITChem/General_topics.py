@@ -2,6 +2,9 @@
 # Includes concentration terms of mole fraction, molality, and normality
 # along with common oxidation-reduction concepts
 
+from periodic_table import periodic_table
+
+
 '''___________________________________________________________________________________________________________________'''
 
 # Mole Fraction
@@ -15,11 +18,11 @@ def mole_fraction(components):
     s  =  0
     #loop to calculate total number of molecules in container
     for mol in component.values():
-        s+  =  mol
+        s+=mol
     #for loop to iterate through the molecules
     for molecule in components.keys():
         #divide moles of component by total moles
-        components[molecule]/  =  s
+        components[molecule]/=s
     #return dictionary of components and their respective mole fractions
     return components
 
@@ -66,7 +69,7 @@ def empirical_formula(table,VD  =  None):
         emperical_mass = 0
         #function to calculate empirical mass
         for element in col_6.keys():
-            emperical_mass+ =col_6[element]*periodic_table[element][1]
+            emperical_mass+=col_6[element]*periodic_table[element][1]
         n= mass/emperical_mass
 
     #return string
