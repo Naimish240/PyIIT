@@ -40,14 +40,14 @@ def empirical_formula(table,VD  =  None):
         return element emperical units*n
     '''
     
-    # percentage/atomic number   =    =   molefraction*100/atomic_mass
+    # percentage/atomic number==molefraction*100/atomic_mass
     
     col_4 = {}
     col_5 = 0
     
     for element in table.keys():
         #fill column 4
-        col_4[element]  =  table[element]/periodic_table[element][1] # periodic_table[element]   =   [atomic_number][mass_number][full_name]
+        col_4[element]  =  table[element]/periodic_table[element][1] # periodic_table[element] = [atomic_number][mass_number][full_name]
         #updatet column 5
         if col_4[element]<col_5:
             col_5= col_4[element]
