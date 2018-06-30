@@ -35,7 +35,7 @@ def atomic_config(num): # num = atomic number = number of electrons (if neutral)
     order=['1s','2s','2p','3s','3s','4s','3d','4p','5s','4d','5p','6s','4f','5d','6p','7s','5f','6d','7p','8s','6f','7d','8p','9s']
     
     # Exceptions (atomic, but valid for configurations too):
-    if num==24 # Chromium
+    if num==24: # Chromium 
         return '1s2 2s2 2p6 3s2 3p6 4s1 3d5'
     elif num==29: # Copper
         return '1s2 2s2 2p6 3s2 3p6 4s1 3d10'
@@ -56,23 +56,25 @@ def atomic_config(num): # num = atomic number = number of electrons (if neutral)
     elif num==79: # Gold
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 4d10 5s2 5p6 6s1 4f14 5d10'
     
+    config=''
+    i=0
     # While loop for others
     while num>0: 
-        config=''
-        i=0
         ele=0
-        if order[i][1]=='s':
+        if 's' in order[i]: # s orbital
             ele=2
-        elif order[i][1]=='p':
+        elif 'p' in order[i]: # p orbital
             ele=6
-        elif order[i][1]=='d':
+        elif 'd' in order[i]: # d orbital
             ele=10
-        else:
+        else: # f orbital
             ele=14
+        
         if num-ele>0:
             config+=order[i]+str(ele)+' '
             num-=ele # reduce the electrons from the total number
             i+=1 # increases i by one
+            continue
         else:
             config+=order[i]+str(num)+' '
             break
