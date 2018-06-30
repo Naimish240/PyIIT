@@ -243,4 +243,5 @@ constants={
     rydberg : 10973731      # Rydberg's const
     h : 6.626*10E-34        # Plank's constant
     sp_heat_water : 4.18    # Specific heat capacity of water
+    gas_const : 8.3144      # Universal gas constant
 }
