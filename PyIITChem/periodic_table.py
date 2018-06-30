@@ -85,7 +85,7 @@ def atomic_config(num): # num = atomic number = number of electrons (if neutral)
 # For first 109 elements along with proton, neutron and electron at end
 periodic_table = [
     
-# symbol | name | atomic number | atomic weight(amu) | state | category | oxidation state(common) | oxidation state(rare)
+# symbol | name | atomic number(str) | atomic weight(amu)(str) | state | category | oxidation state(common) | oxidation state(rare)
 
 # Group 1 Alkali Metals
 ['H','Hydrogen','1','1.01','Gas','Alkali Metals',[-1, 1],None],
@@ -229,3 +229,12 @@ periodic_table = [
 '''___________________________________________________________________________________________________________________'''
 
 
+# Dictionary of constants
+
+constants={
+    avagadro : 6.022*10E23
+    faraday : 96485.33
+    amu : 1.66*10E27
+    coulomb : 8.987*10E9
+    
+}

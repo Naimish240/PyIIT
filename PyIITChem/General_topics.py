@@ -145,7 +145,8 @@ def molality(compound,solv_mass,subs_moles=0.0,subs_mass=0.0):
 
 '''___________________________________________________________________________________________________________________'''
 
-
+def molar_to_molal(molar,density):
+    
     
     
         
