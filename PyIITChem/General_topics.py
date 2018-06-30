@@ -1,6 +1,5 @@
 # -- General Topics --
-# Includes concentration terms of mole fraction, molality, and normality
-# along with common oxidation-reduction concepts
+# Includes concentration terms of mole fraction, molality, molarity, etc
 
 from periodic_table import periodic_table
 
