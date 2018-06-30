@@ -232,9 +232,15 @@ periodic_table = [
 # Dictionary of constants
 
 constants={
-    avagadro : 6.022*10E23
-    faraday : 96485.33
-    amu : 1.66*10E27
-    coulomb : 8.987*10E9
-    
+    avagadro : 6.022*10E23  # Avagadro's const
+    faraday : 96485.33      # Faraday's const
+    amu : 1.66*10E-27       # One atomic mass unit
+    coulomb : 8.987*10E9    # Coulomb's const
+    c : 299792458           # Speed of light in vacuum
+    boltzmann : 1.38*10E-23 # Boltzmann constant
+    q : 1.602*10E-19        # Charge on proton
+    g : 9.80665             # std accn due to gravity on earth
+    rydberg : 10973731      # Rydberg's const
+    h : 6.626*10E-34        # Plank's constant
+    sp_heat_water : 4.18    # Specific heat capacity of water
 }
