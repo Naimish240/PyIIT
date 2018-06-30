@@ -10,74 +10,132 @@
 
 def mole_fraction(components):
     #dictionary to be returned
-    molefrac={}
+    molefrac = {}
     #sum of total moles in container
-    s=0
+    s = 0
     #loop to calculate total number of molecules in container
     for mol in component.values():
-        s+=mol
+        s+ = mol
     #for loop to iterate through the molecules
     for molecule in components.keys():
         #divide moles of component by total moles
-        components[molecule]/=s
+        components[molecule]/ = s
     #return dictionary of components and their respective mole fractions
     return components
 
 # Empirical Formula
 # Takes dictionary of elements and their % as input, returns string of molecule
-def empirical_formula(table,VD=None):
-    final_table={}
-    '''   col 1           col 2        col 3                   col 4                col 5                 col 6
+def empirical_formula(table,VD = None):
+    final_table = {}
+    '''
+            col 1           col 2        col 3                   col 4                col 5                 col 6
         Element/symbol  percentage   atomic number    percentage/atomic mass     lowest ratio        emperical units
                                                              aka moles
 
-        if VD==True, then mass=2*vd, emperical mass= emperical units*element.
-        n=mass/emperical mass
+        if VD =  = True, then mass = 2*vd, emperical mass =  emperical units*element.
+        n = mass/emperical mass
         return element emperical units*n
     '''
     
-    # percentage/atomic number == molefraction*100/atomic_mass
+    # percentage/atomic number  =  =  molefraction*100/atomic_mass
     
-    col_4 = {}
-    col_5 = 0
+    col_4  =  {}
+    col_5  =  0
     
     for element in table.keys():
         #fill column 4
-        col_4[element] = table[element]/periodic_table[element][1] # periodic_table[element] = [atomic_number][mass_number][full_name]
+        col_4[element]  =  table[element]/periodic_table[element][1] # periodic_table[element]  =  [atomic_number][mass_number][full_name]
         #updatet column 5
         if col_4[element]<col_5:
-            col_5 = col_4[element]
+            col_5  =  col_4[element]
             
-    col_6 = {}
+    col_6  =  {}
     # col 6 is filled
     
     for element in col_4.keys:
-        col_6[element] = round(col_4/col_5)
+        col_6[element]  =  round(col_4/col_5)
 
     # V.D. is given
-    n=1 # default
+    n = 1 # default
     
     if VD:
-        mass=VD*2
-        emperical_mass=0
+        mass = VD*2
+        emperical_mass = 0
         #function to calculate empirical mass
         for element in col_6.keys():
-            emperical_mass+=col_6[element]*periodic_table[element][1]
-        n = mass/emperical_mass
+            emperical_mass+ = col_6[element]*periodic_table[element][1]
+        n  =  mass/emperical_mass
 
     #return string
-    compd=''
+    compd = ''
     for element in table.keys():
-        compd+=element+str(n*col_6[element])
+        compd+ = element+str(n*col_6[element])
 
     return compd
 '''___________________________________________________________________________________________________________________'''
 
+# Molar Mass
+# Calculates molar mass of compound
+# Takes dictionary as input and returns a float
+# dictionary contains key-order pair of element name (NOT SYMBOL) and its subscript
+
+def molar_mass(compound):
+    mol_mass = 0.0
+    for element in compound.keys():
+        for i in periodic_table:
+            if i[1].lower() =  = element.lower():
+                mol_mass+ = periodic_table[i][3]
+    return mol_mass
+
+'''___________________________________________________________________________________________________________________'''
+
+'''___________________________________________________________________________________________________________________'''
+
+# Moles
+# Calculates moles of a compound, when mass and compound is given
+# Takes dictionary and mass taken as input and returns a float
+# dictionary contains key-order pair of element name (NOT SYMBOL) and its subscript
+
+def moles(compound,mass):
+    mol_mass  =  molar_mass(compound)
+    return mol_mass/moles
+
+'''___________________________________________________________________________________________________________________'''
+
+
 # Molarity
 # moles of solute per litre of solution
-# takes dictionary and volume of solution as input, and returns float
+# takes dictionary, mass taken and volume(in liters) of solution as input, and returns float
+# dictionary contains key-order pair of element name (NOT SYMBOL) and its subscript
+# formula : Moles(of solute)/volume(of solution)
 
-def molarity(table,volume):
+def molarity(compound,volume,mass = 0,moles = 0):
+    # mass given
+    if mass:
+        # Calculate molar mass of compound
+        mol_mass = molar_mass(compound)
+        # Calculates moles       
+        return moles(compound,mass)/volume
+    # Moles given
+    elif moles:
+        return moles/volume
+    else:
+        print("Error!")
+        return None
+'''___________________________________________________________________________________________________________________'''
+
+
+# Molality
+# Moles per kilogram of solution
+# takes dictionary, mass of substance taken and mass of solvent as input, and returns float
+# dictionary contains key-order pair of element name (NOT SYMBOL) and its subscript
+# formula : Moles(of solute)/mass(of solvent)
+
+def molality(compound,solv_mass,subs_moles,subs_mass = 0.0):
+    
+        
+    
+    
         
         
         
