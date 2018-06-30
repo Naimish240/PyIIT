@@ -35,25 +35,25 @@ def atomic_config(num): # num = atomic number = number of electrons (if neutral)
     order=['1s','2s','2p','3s','3p','4s','3d','4p','5s','4d','5p','6s','4f','5d','6p','7s','5f','6d','7p','8s','6f','7d','8p','9s']
     
     # Exceptions (atomic, but valid for configurations too):
-    if num==24: # Chromium 
+    if num == 24: # Chromium 
         return '1s2 2s2 2p6 3s2 3p6 4s1 3d5'
-    elif num==29: # Copper
+    elif num == 29: # Copper
         return '1s2 2s2 2p6 3s2 3p6 4s1 3d10'
-    elif num==41: # Niobium
+    elif num == 41: # Niobium
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d4'
-    elif num==42: # Molybdenum
+    elif num == 42: # Molybdenum
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d5'
-    elif num==44: # Ruthenium
+    elif num == 44: # Ruthenium
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d7'
-    elif num==45: # Rodhium
+    elif num == 45: # Rodhium
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d8'
-    elif num==46: # Palladium
+    elif num == 46: # Palladium
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 4d10'
-    elif num==47: # Silver
+    elif num == 47: # Silver
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s1 4d10'
-    elif num==78: # Platinum
+    elif num == 78: # Platinum
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 4d10 5s2 5p6 6s1 4f14 5d9'
-    elif num==79: # Gold
+    elif num == 79: # Gold
         return '1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 4d10 5s2 5p6 6s1 4f14 5d10'
     
     config=''
@@ -83,7 +83,7 @@ def atomic_config(num): # num = atomic number = number of electrons (if neutral)
 '''___________________________________________________________________________________________________________________'''
 
 # For first 109 elements along with proton, neutron and electron at end
-periodic_table =[
+periodic_table = [
     
 # symbol | name | atomic number | atomic weight(amu) | state | category | oxidation state(common) | oxidation state(rare)
 
