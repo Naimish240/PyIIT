@@ -32,7 +32,7 @@ def atomic_config(num): # num = atomic number = number of electrons (if neutral)
     # d orbital : 10 electrons
     # f orbital : 14 electrons
     
-    order=['1s','2s','2p','3s','3s','4s','3d','4p','5s','4d','5p','6s','4f','5d','6p','7s','5f','6d','7p','8s','6f','7d','8p','9s']
+    order=['1s','2s','2p','3s','3p','4s','3d','4p','5s','4d','5p','6s','4f','5d','6p','7s','5f','6d','7p','8s','6f','7d','8p','9s']
     
     # Exceptions (atomic, but valid for configurations too):
     if num==24: # Chromium 
@@ -89,7 +89,7 @@ periodic_table =[
 
 # Group 1 Alkali Metals
 ['H','Hydrogen','1','1.01','Gas','Alkali Metals',[-1, 1],None],
-['Li','Lithium','3','6.94','Solid','Category = Alkali Metals',[1],None],
+['Li','Lithium','3','6.94','Solid','Alkali Metals',[1],None],
 ['Na','Sodium','11','22.99','Solid','Alkali Metals',[1],[-1]],
 ['K','Potassium','19','39.10','Solid','Alkali Metals',[1],[-1]],
 ['Rb','Rubidium','37','85.47','Solid','Alkali Metals',[1],[-1]],

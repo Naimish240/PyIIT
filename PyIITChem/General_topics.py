@@ -131,7 +131,7 @@ def molarity(compound,volume,mass = 0,moles = 0):
 # dictionary contains key-order pair of element name (NOT SYMBOL) and its subscript
 # formula : Moles(of solute)/mass(of solvent)
 
-def molality(compound,solv_mass,subs_moles,subs_mass = 0.0):
+def molality(compound,solv_mass,subs_moles=0,subs_mass = 0.0):
     
         
     
