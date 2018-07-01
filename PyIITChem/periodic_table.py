@@ -14,6 +14,7 @@
 
 
 # Returns the elements sorted by atomic number, rather than group
+
 def sorted_by_atomic_number(arr):
     n=len(arr)
     for i in range(n):
@@ -26,6 +27,7 @@ def sorted_by_atomic_number(arr):
 
 # Function to return Electronic Configuraton of an element
 # Takes atomic number as input, returns string
+
 def atomic_config(num): # num = atomic number = number of electrons (if neutral)
     # s orbital : 2 electrons
     # p orbital : 6 electrons
@@ -83,6 +85,7 @@ def atomic_config(num): # num = atomic number = number of electrons (if neutral)
 '''___________________________________________________________________________________________________________________'''
 
 # For first 109 elements along with proton, neutron and electron at end
+
 periodic_table = [
     
 # symbol | name | atomic number(str) | atomic weight(amu)(str) | state | category | oxidation state(common) | oxidation state(rare) 
@@ -245,3 +248,5 @@ constants={
     'sp_heat_water' : 4.18,    # Specific heat capacity of water
     'gas_const' : 8.3144      # Universal gas constant
 }
+
+'''___________________________________________________________________________________________________________________'''
