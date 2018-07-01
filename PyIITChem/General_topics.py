@@ -3,7 +3,6 @@
 
 from periodic_table import periodic_table
 
-
 '''___________________________________________________________________________________________________________________'''
 
 # Mole Fraction
@@ -12,11 +11,10 @@ from periodic_table import periodic_table
 
 def mole_fraction(components):
     #dictionary to be returned
-    molefrac  =  {}
     #sum of total moles in container
     s  =  0
     #loop to calculate total number of molecules in container
-    for mol in component.values():
+    for mol in components.values():
         s+=mol
     #for loop to iterate through the molecules
     for molecule in components.keys():
@@ -31,7 +29,6 @@ def mole_fraction(components):
 # Takes dictionary of elements and their % as input, returns string of molecule
 
 def empirical_formula(table,VD  =  None):
-    final_table  =  {}
     '''
             col 1           col 2        col 3                   col 4                col 5                 col 6
         Element/symbol  percentage   atomic number    percentage/atomic mass     lowest ratio        emperical units
@@ -57,7 +54,7 @@ def empirical_formula(table,VD  =  None):
     col_6={}
     # col 6 is filled
     
-    for element in col_4.keys:
+    for element in col_4.keys():
         col_6[element]= round(col_4/col_5)
 
     # V.D. is given
@@ -102,7 +99,7 @@ def molar_mass(compound):
 
 def moles_of_compound(compound,mass):
     mol_mass=molar_mass(compound)
-    return mol_mass/moles
+    return mass/mol_mass
 
 '''___________________________________________________________________________________________________________________'''
 
@@ -116,8 +113,6 @@ def moles_of_compound(compound,mass):
 def molarity(compound,volume,mass=0,moles=0):
     # mass given
     if mass:
-        # Calculate molar mass of compound
-        mol_mass=molar_mass(compound)
         # Calculates moles       
         return moles_of_compound(compound,mass)/volume
     # Moles given
