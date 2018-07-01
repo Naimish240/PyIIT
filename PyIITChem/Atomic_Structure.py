@@ -11,9 +11,15 @@ They include:
 '''
 '''___________________________________________________________________________________________________________________'''
 
+# Import statements
+
+from __future__ import absolute_import
+from __future__ import print_function
+
 from Periodic_Table import periodic_table as pt
 from Periodic_Table import constants 
 from Periodic_Table import atomic_config
+
 from math import pi
 
 '''___________________________________________________________________________________________________________________'''
@@ -62,3 +68,4 @@ def de_broglie_wavelength(p):
     return constants['h']/p
 
 '''___________________________________________________________________________________________________________________'''
+

@@ -1,7 +1,15 @@
 # -- General Topics --
 # Includes concentration terms of mole fraction, molality, molarity, etc
 
-from periodic_table import periodic_table
+'''___________________________________________________________________________________________________________________'''
+
+# Import statements
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+from Periodic_Table import periodic_table
+
 
 '''___________________________________________________________________________________________________________________'''
 
