@@ -16,9 +16,9 @@ They include:
 from __future__ import absolute_import
 from __future__ import print_function
 
-from Periodic_Table import periodic_table as pt
-from Periodic_Table import constants 
-from Periodic_Table import atomic_config
+from PyIITChem.Periodic_Table import periodic_table as pt
+from PyIITChem.Periodic_Table import constants 
+from PyIITChem.Periodic_Table import atomic_config
 
 from math import pi
 
@@ -54,7 +54,7 @@ def bohr_velocity(n,z=1):
 # Function to calculate energy of nth bohr orbit
 # Takes 'n' and 'z' as inputs, and returns a float
 
-def bohr_energy(n,unit='eV',z=1):
+def bohr_energy(n,z=1):
     # Formula: E = -13.6 z^2/n^2 eV
     return -13.6*(z^2/n^2)
 
@@ -68,4 +68,17 @@ def de_broglie_wavelength(p):
     return constants['h']/p
 
 '''___________________________________________________________________________________________________________________'''
+
+# Function to calculate the wavelength of energy emitted when electron transitions from one energy state to another
+# Takes 'n' and 'z' as inputs, and returns a float
+
+def photon_from_atom(n1,n2,z=1):
+    e1=bohr_energy(n1,z)
+    e2=bohr_energy(n2,z)
+    e=e1-e2
+    wavelength=(12400/e)*10E-10
+    return wavelength # wavelength > 0 : emitted, else absorbed
+
+'''___________________________________________________________________________________________________________________'''
+
 

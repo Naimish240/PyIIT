@@ -1,5 +1,14 @@
 # -- General Topics --
 # Includes concentration terms of mole fraction, molality, molarity, etc
+'''
+    The functions in this program include:
+        1. mole_fraction(components)
+        2. empirical_formula(table,VD  =  None)
+        3. molar_mass(compound)
+        4. moles_of_compound(compound,mass)
+        5. molarity(compound,volume,mass=0,moles=0)
+        6. molality(compound,solv_mass,subs_moles=0.0,subs_mass=0.0)
+'''
 
 '''___________________________________________________________________________________________________________________'''
 
@@ -164,9 +173,44 @@ def molal_to_molar(molal,density,wt_of_solute):
     return molal*(density-wt_of_solute)
 
 '''___________________________________________________________________________________________________________________'''  
+
+# Function to split equation into LHS and RHS
+# Takes string as input, and returns a nested list of the form [lhs,rhs]
+def split_equation(s):
+    l=s.split(' ')
+    rhs=[]
+    lhs=[]
+    i=0
+    # Adds elements to RHS
+    while True:
+        if l[i] == '=':
+            break
+        elif l[i] == '+':
+            continue
+        rhs.append()
+
+    # Adds elements to LHS
+    for i in range(i,len(l)):
+        if l[i]!= '+':
+            lhs.append(l[i])
     
-    
-        
+    # Returns LHS and RHS in list
+    return [lhs,rhs]
+
+'''___________________________________________________________________________________________________________________'''  
+
+# Balances normal equations
+# Takes in a string of the form : H3BO3 = H4B6O11 + H2O
+# And gives the output          : 6 H3BO3 = 1 H4B6O11 + 7 H2O
+
+def balance_normal(s):
+    eqn=split_equation(s)
+    lhs=eqn[0]
+    rhs=eqn[1]
+
+
+
+
         
         
         
