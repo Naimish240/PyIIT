@@ -81,4 +81,25 @@ def photon_from_atom(n1,n2,z=1):
 
 '''___________________________________________________________________________________________________________________'''
 
+# Rydberg's formula
+# Returns series name and value of wave number
+
+def Rydberg(n1,n2,z=1):
+    wave_number = (constants['rydberg']*z**2)*((n1**(-2)-n2**(-2)))
+    if n1==1:
+        return [wave_number,'Lymann']
+    elif n1==2:
+        return [wave_number,'Balmer']
+    elif n1==3:
+        return [wave_number,'Paschen']
+    elif n1==4:
+        return [wave_number,'Brackett']
+    elif n1==5:
+        return [wave_number,'Pfund']
+    elif n1==6:
+        return [wave_number,'Humpherey']
+    else:
+        return [wave_number,None]
+
+'''___________________________________________________________________________________________________________________'''
 
