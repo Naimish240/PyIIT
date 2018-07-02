@@ -207,6 +207,7 @@ def balance_normal(s):
     eqn=split_equation(s)
     lhs=eqn[0]
     rhs=eqn[1]
+    
 
 
 
