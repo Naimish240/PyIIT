@@ -25,6 +25,24 @@ def sorted_by_atomic_number(arr):
 
 '''___________________________________________________________________________________________________________________'''
 
+# Returns the compound(string) as a dictionary of element:number of atoms pairs
+
+def compd_to_elements(compound):
+    # fill soon
+    pass
+
+'''___________________________________________________________________________________________________________________'''
+
+# Checks if the element exists in the periodic table or not
+
+def check_element(element):
+    for i in periodic_table:
+        if i[0] == element:
+            return True
+    return False
+
+'''___________________________________________________________________________________________________________________'''
+
 # For first 109 elements along with proton, neutron and electron at end
 
 periodic_table = [

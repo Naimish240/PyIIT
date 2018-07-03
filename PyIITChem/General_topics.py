@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from Periodic_Table import periodic_table
-from Periodic_Table import 
+from Periodic_Table import compd_to_elements
 
 
 '''___________________________________________________________________________________________________________________'''
