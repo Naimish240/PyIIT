@@ -18,6 +18,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from Periodic_Table import periodic_table
+from Periodic_Table import 
 
 
 '''___________________________________________________________________________________________________________________'''
@@ -29,7 +30,7 @@ from Periodic_Table import periodic_table
 def mole_fraction(components):
     #dictionary to be returned
     #sum of total moles in container
-    s  =  0
+    s = 0
     #loop to calculate total number of molecules in container
     for mol in components.values():
         s+=mol
@@ -187,12 +188,12 @@ def split_equation(s):
             break
         elif l[i] == '+':
             continue
-        rhs.append()
+        lhs.append()
 
     # Adds elements to LHS
     for i in range(i,len(l)):
         if l[i]!= '+':
-            lhs.append(l[i])
+            rhs.append(l[i])
     
     # Returns LHS and RHS in list
     return [lhs,rhs]
@@ -207,6 +208,7 @@ def balance_normal(s):
     eqn=split_equation(s)
     lhs=eqn[0]
     rhs=eqn[1]
+
     
 
 
