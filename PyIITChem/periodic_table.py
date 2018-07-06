@@ -29,7 +29,7 @@ def sorted_by_atomic_number(arr):
 
 def compd_to_elements(compound):
     # fill soon
-    pass
+    elements = {}
 
 '''___________________________________________________________________________________________________________________'''
 
